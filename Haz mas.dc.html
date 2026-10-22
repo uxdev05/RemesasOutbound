@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/bankaool-design-system-e4a58535-11ab-47ad-9339-673141d69251/colors_and_type.css">
+<link rel="stylesheet" href="_ds/bankaool-design-system-e4a58535-11ab-47ad-9339-673141d69251/preview/_preview.css">
+<script src="_ds/bankaool-design-system-e4a58535-11ab-47ad-9339-673141d69251/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"><style>body{font-family:Poppins,sans-serif;margin:0;background:#E5E4E4}a{color:#1E1E23}a:hover{color:#707070}button{font-family:inherit}</style>
+</helmet>
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;font-family:Poppins,sans-serif">
+<div data-screen-label="02 Haz más" style="position:relative;width:390px;height:844px;background:#FFFFFF;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px #E5E4E4,0 24px 60px rgba(43,42,40,.18);color:#1E1E23">
+  <div style="position:absolute;inset:0;overflow-y:auto;padding:0 16px 48px;scrollbar-width:none">
+    <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 14px 6px;font-weight:600;font-size:16px;margin:0 -16px">
+      <span>9:41</span>
+      <span style="display:flex;gap:6px;align-items:center"><svg width="18" height="12" viewBox="0 0 18 12" fill="#1E1E23"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1" opacity=".3"/></svg><svg width="26" height="12" viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3.5" fill="none" stroke="#1E1E23" opacity=".4"/><rect x="2" y="2" width="19" height="8" rx="2" fill="#1E1E23"/></svg></span>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;height:56px;margin:0 -8px">
+      <a href="Home.dc.html" aria-label="Volver" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#1E1E23"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+      <button aria-label="WhatsApp" style="all:unset;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1E23" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3a9 9 0 00-7.700 13.600L3 21l4.500-1.200A9 9 0 1012 3z"/><path d="M9 8.500c0 3.500 3 6.500 6.500 6.500l1-2-2.200-1-1 1c-1-.5-2-1.500-2.500-2.500l1-1-1-2.200z" fill="#1E1E23" stroke="none"/></svg></button>
+    </div>
+    <div style="margin-top:12px;font-family:Poppins,sans-serif;font-weight:700;font-size:18px">En un solo lugar</div>
+    <h1 style="margin:4px 0 0;font-family:Poppins,sans-serif;font-weight:800;font-size:40px;line-height:46px">Haz más</h1>
+    <div style="width:155px;height:8px;background:#1E1E23;margin-top:10px"></div>
+    <p style="margin:12px 0 0;font-size:16px;line-height:22px">Aquí encontrarás servicios, recargas y todo lo nuevo que trae Bankaool.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 20px;margin-top:28px">
+      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="6">
+        <button onClick="{{ c.go }}" style="all:unset;cursor:pointer;position:relative;display:block;height:158px;border-radius:20px;border:2px solid #1E1E23;background:{{ c.bg }};overflow:hidden;box-sizing:border-box">
+          <span style="position:absolute;left:14px;right:10px;top:12px;font-family:Poppins,sans-serif;font-weight:700;font-size:16px;line-height:20px;color:#1E1E23">{{ c.title }}</span>
+          <span style="position:absolute;left:0;right:0;bottom:0;height:98px;display:block"><image-slot id="{{ c.slot }}" src="{{ c.src }}" fit="cover" shape="rect" placeholder="Ilustración" style="width:100%;height:100%;background:transparent"></image-slot></span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+  <div style="position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:134px;height:5px;border-radius:9999px;background:#1E1E23"></div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const c = [
+      ['Recargas', '#FFADEC', 'hm-recargas'],
+      ['Operaciones internacionales', '#64F0B6', 'hm-intl'],
+      ['Omni Pay', '#7B96FF', 'hm-omni'],
+      ['Servicios', '#FFDD70', 'hm-servicios'],
+      ['CoDi', '#FFADEC', 'hm-codi'],
+      ['Seguros', '#64F0B6', 'hm-seguros'],
+    ];
+    return { cards: c.map(([title, bg, slot]) => ({ title, bg, slot, src: slot === 'hm-intl' ? 'uploads/Illustration 2.png' : '', go: () => { if (slot === 'hm-intl') window.location.href = 'Operaciones internacionales.dc.html'; } })) };
+  }
+}
+</script>
+</body>
+</html>
