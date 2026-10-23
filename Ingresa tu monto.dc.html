@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/bankaool-design-system-e4a58535-11ab-47ad-9339-673141d69251/colors_and_type.css">
+<link rel="stylesheet" href="_ds/bankaool-design-system-e4a58535-11ab-47ad-9339-673141d69251/preview/_preview.css">
+<script src="_ds/bankaool-design-system-e4a58535-11ab-47ad-9339-673141d69251/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>body{font-family:Poppins,sans-serif;margin:0;background:#E5E4E4}a{color:#FAFAFA}a:hover{color:#D3DBFF}button{font-family:inherit}</style>
+</helmet>
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;font-family:Poppins,sans-serif">
+<div data-screen-label="04 Ingresa tu monto" style="position:relative;width:390px;height:844px;background:#FAFAFA;border-radius:44px;overflow:hidden;box-shadow:0 0 0 1px #E5E4E4,0 24px 60px rgba(30,30,35,.18);color:#1E1E23">
+  <div style="position:absolute;left:0;right:0;top:0;height:440px;background:#1E1E23;color:#FAFAFA;padding:0 22px;box-sizing:border-box">
+    <div style="height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 14px 6px;font-weight:600;font-size:16px;margin:0 -22px">
+      <span>9:41</span>
+      <span style="display:flex;gap:6px;align-items:center"><svg width="18" height="12" viewBox="0 0 18 12" fill="#FAFAFA"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1" opacity=".3"/></svg><svg width="26" height="12" viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3.5" fill="none" stroke="#FAFAFA" opacity=".4"/><rect x="2" y="2" width="19" height="8" rx="2" fill="#FAFAFA"/></svg></span>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;height:56px;margin:0 -10px">
+      <a href="Operaciones internacionales.dc.html" aria-label="Volver" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+      <div style="display:flex;align-items:center;gap:6px;font-weight:600;font-size:14px;padding-right:6px">Ayuda
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FAFAFA" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3a9 9 0 00-7.700 13.600L3 21l4.500-1.200A9 9 0 1012 3z"/><path d="M9 8.500c0 3.500 3 6.500 6.500 6.500l1-2-2.200-1-1 1c-1-.5-2-1.500-2.500-2.500l1-1-1-2.200z" fill="#FAFAFA" stroke="none"/></svg></div>
+    </div>
+    <h1 style="margin:16px 0 0;text-align:center;font-weight:700;font-size:32px;line-height:40px">Ingresa tu monto</h1>
+    <div onClick="{{ editAmount }}" style="position:relative;margin-top:24px;border:1px solid #707070;border-radius:16px;overflow:hidden">
+      <div style="height:94px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;box-sizing:border-box">
+        <div style="display:flex;align-items:center;gap:10px"><div style="{{ top.flagStyle }}"><span style="{{ top.codeStyle }}">{{ top.flagText }}</span></div><span style="font-weight:600;font-size:14px">{{ top.code }}</span></div>
+        <div style="text-align:right"><div style="font-size:14px;color:#E5E4E4">{{ topLabel }}</div><div style="font-weight:700;font-size:24px;line-height:32px;color:#FAFAFA">{{ sendText }}</div></div>
+      </div>
+      <div style="height:1px;background:#707070"></div>
+      <div style="height:94px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;box-sizing:border-box">
+        <div style="display:flex;align-items:center;gap:10px"><div style="{{ bottom.flagStyle }}"><span style="{{ bottom.codeStyle }}">{{ bottom.flagText }}</span></div><span style="font-weight:600;font-size:14px">{{ bottom.code }}</span></div>
+        <div style="text-align:right"><div style="font-size:14px;color:#ADADAD">{{ bottomLabel }}</div><div style="font-size:16px;line-height:28px;color:#ADADAD">{{ receiveText }}</div></div>
+      </div>
+      <div style="height:38px;background:#2B2B2F;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px">{{ rateText }}</div>
+      <button onClick="{{ swap }}" style="position:absolute;left:50%;top:94px;transform:translate(-50%,-50%);height:36px;padding:0 16px;border-radius:9999px;border:0;background:#D3DBFF;color:#1E1E23;font-weight:600;font-size:13px;display:flex;align-items:center;gap:8px;cursor:pointer">Intercambiar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E1E23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20V5M4 9l4-4 4 4M16 4v15M12 15l4 4 4-4"/></svg></button>
+    </div>
+  </div>
+  <sc-if value="{{ showKeys }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute;left:24px;right:24px;top:460px">
+    <button onClick="{{ next }}" disabled="{{ nextOff }}" style="width:100%;height:56px;border-radius:9999px;background:#FAFAFA;border:1.5px solid {{ nextBorder }};color:{{ nextBorder }};font-weight:700;font-size:16px;cursor:pointer">Consultar total</button>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px 12px;margin-top:24px">
+      <sc-for list="{{ keys }}" as="k" hint-placeholder-count="12">
+        <button onClick="{{ k.press }}" aria-label="{{ k.aria }}" style="height:46px;border-radius:9999px;border:0;background:{{ k.bg }};color:#1E1E23;font-weight:600;font-size:18px;cursor:{{ k.cursor }};display:flex;align-items:center;justify-content:center" style-active="background:#E5E4E4">{{ k.label }}<span style="display:{{ k.iconShow }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E1E23" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h10a2 2 0 012 2v10a2 2 0 01-2 2H9l-6-7z"/><path d="M12 9.500l5 5M17 9.500l-5 5"/></svg></span></button>
+      </sc-for>
+    </div>
+  </div>
+  </sc-if>
+  <sc-if value="{{ showSummary }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:24px;right:24px;bottom:36px">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;align-items:center;gap:12px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E1E23" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h16M5 18a7 7 0 0114 0M12 8V5M10 5h4"/></svg><span style="flex:1;font-size:16px">Cargo por servicio</span><span style="font-weight:600;font-size:16px;color:#707070">{{ feeText }}</span></div>
+      <div style="display:flex;align-items:center;gap:12px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E1E23" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5M5 9v8M9 9v8M15 9v8M19 9v8M3 20h18"/></svg><span style="flex:1;font-size:16px">IVA (16%)</span><span style="font-weight:600;font-size:16px;color:#707070">{{ ivaText }}</span></div>
+      <div style="display:flex;align-items:center;gap:12px"><svg width="24" height="24" viewBox="0 0 24 24" fill="#1E1E23"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M12 8v8M14 9.500c-.5-.8-3.500-.8-3.500.7 0 1.800 3.500.8 3.500 2.600 0 1.400-3 1.400-3.500.5" stroke="#FAFAFA" stroke-width="1.200" fill="none" stroke-linecap="round"/></svg><span style="flex:1;font-weight:700;font-size:16px">Total</span><span style="font-weight:700;font-size:20px">{{ totalText }}</span></div>
+    </div>
+    <button onClick="{{ goContinue }}" style="margin-top:28px;width:100%;height:56px;border-radius:9999px;border:0;background:#1E1E23;color:#FAFAFA;font-weight:700;font-size:16px;cursor:pointer">Continuar</button>
+  </div>
+  </sc-if>
+  <div style="position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:134px;height:5px;border-radius:9999px;background:#1E1E23"></div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { digits: '', summary: false, swapped: false, country: 'Estados Unidos' };
+  componentDidMount() {
+    const c = new URLSearchParams(window.location.search).get('c');
+    if ((c || sessionStorage.getItem('bk_country')) && this.CUR[c || sessionStorage.getItem('bk_country')]) this.setState({ country: c || sessionStorage.getItem('bk_country') });
+  }
+  CUR = {
+    'Estados Unidos': { code: 'USD', rate: 0.0541 },
+    'Colombia': { code: 'COP', rate: 225.4 },
+    'Costa Rica': { code: 'CRC', rate: 28.1 },
+    'Venezuela': { code: 'VES', rate: 2.4 },
+    'Guatemala': { code: 'GTQ', rate: 0.42 },
+    'China': { code: 'CNY', rate: 0.39 },
+    'España': { code: 'EUR', rate: 0.05 },
+  };
+  flag(code) {
+    const base = 'width:32px;height:32px;border-radius:9999px;flex:none;overflow:hidden;display:flex;align-items:center;justify-content:center;';
+    if (code === 'MXN') return { flagStyle: base + 'background:linear-gradient(90deg,#00A859 33%,#FAFAFA 33% 66%,#D80027 66%)', codeStyle: 'display:none', flagText: '' };
+    const F = {
+      USD: 'repeating-linear-gradient(180deg,#D80027 0 3px,#FAFAFA 3px 6px)',
+      COP: 'linear-gradient(180deg,#FFDA44 50%,#0052B4 50% 75%,#D80027 75%)',
+      CRC: 'linear-gradient(180deg,#0052B4 0 16%,#FAFAFA 16% 33%,#D80027 33% 67%,#FAFAFA 67% 84%,#0052B4 84%)',
+      VES: 'linear-gradient(180deg,#FFDA44 33%,#0052B4 33% 67%,#D80027 67%)',
+      GTQ: 'linear-gradient(90deg,#4997D0 33%,#FAFAFA 33% 67%,#4997D0 67%)',
+      CNY: 'radial-gradient(circle at 28% 30%,#FFDA44 0 14%,transparent 15%),#D80027',
+      EUR: 'linear-gradient(180deg,#D80027 25%,#FFDA44 25% 75%,#D80027 75%)',
+    };
+    if (F[code]) return { flagStyle: base + 'background:' + F[code], codeStyle: 'display:none', flagText: '' };
+    return { flagStyle: base + 'background:#D3DBFF', codeStyle: 'font-size:10px;font-weight:700;color:#1E1E23;', flagText: code.slice(0, 2) };
+  }
+  fmt(n, d) { return n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d }); }
+  renderVals() {
+    const { digits, swapped, country } = this.state;
+    const cur = this.CUR[country];
+    const n = digits ? parseInt(digits, 10) : 0;
+    const A = swapped ? cur.code : 'MXN', B = swapped ? 'MXN' : cur.code;
+    const rate = swapped ? 1 / cur.rate : cur.rate;
+    const cash = '$';
+    const mxn = swapped ? n * rate : n, fee = mxn * 0.015, iva = fee * 0.16;
+    const money = v => '$' + this.fmt(v, 2) + ' MXN';
+    const keys = ['1','2','3','4','5','6','7','8','9','','0','del'].map(k => {
+      if (k === '') return { label: '', bg: 'transparent', cursor: 'default', iconShow: 'none', aria: '', press: () => {} };
+      if (k === 'del') return { label: '', bg: '#F0F0F0', cursor: 'pointer', iconShow: 'flex', aria: 'Borrar', press: () => this.setState(s => ({ digits: s.digits.slice(0, -1) })) };
+      return { label: k, bg: '#F0F0F0', cursor: 'pointer', iconShow: 'none', aria: k, press: () => this.setState(s => ({ digits: (s.digits + k).replace(/^0+/, '').slice(0, 9) })) };
+    });
+    return {
+      top: { code: A, ...this.flag(A) }, bottom: { code: B, ...this.flag(B) },
+      sendText: (swapped ? '' : cash) + this.fmt(n, 2),
+      topLabel: swapped ? 'Recibe' : 'Tú envías', bottomLabel: swapped ? 'Tú envías' : 'Recibe',
+      receiveText: (swapped ? cash : '') + this.fmt(n * rate, 2),
+      rateText: '1 ' + A + ' = ' + rate.toFixed(4) + ' ' + B,
+      swap: (e) => { e && e.stopPropagation(); this.setState(s => ({ swapped: !s.swapped })); },
+      showKeys: !this.state.summary, showSummary: this.state.summary,
+      feeText: money(fee), ivaText: money(iva), totalText: money(mxn + fee + iva),
+      editAmount: () => { if (this.state.summary) this.setState({ summary: false }); },
+      goContinue: () => { sessionStorage.setItem('bk_country', country); sessionStorage.setItem('bk_amount', String(n)); sessionStorage.setItem('bk_swapped', swapped ? '1' : '0'); window.location.href = 'Configura tu envio.dc.html?c=' + encodeURIComponent(country) + '&a=' + n + '&s=' + (swapped ? 1 : 0); },
+      keys, nextOff: n === 0, nextBorder: n ? '#1E1E23' : '#ADADAD',
+      next: () => this.setState({ summary: true }),
+    };
+  }
+}
+</script>
+</body>
+</html>

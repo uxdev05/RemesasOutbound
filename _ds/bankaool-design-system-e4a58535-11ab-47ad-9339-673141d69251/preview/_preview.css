@@ -1,0 +1,55 @@
+/* Shared scaffold for every preview card. Each card has fixed pixel
+   dimensions so the Design System reviewer can lay them out on a grid. */
+
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--bk-font-body);
+  background: var(--bk-bg-base-200);
+  color: var(--bk-content-default);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.bk-card {
+  box-sizing: border-box;
+  background: var(--bk-bg-base-200);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.bk-row { display: flex; align-items: center; gap: 12px; }
+.bk-stack { display: flex; flex-direction: column; gap: 8px; }
+.bk-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.bk-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.bk-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.bk-grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+
+.bk-swatch {
+  border-radius: var(--bk-radius-md);
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8px 10px;
+  border: 1px solid var(--bk-border-subtle);
+}
+.bk-swatch .label {
+  font-family: var(--bk-font-body);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 14px;
+}
+.bk-swatch .hex {
+  font-family: var(--bk-font-mono);
+  font-size: 10px;
+  line-height: 14px;
+  opacity: 0.65;
+}
+.bk-meta {
+  font-family: var(--bk-font-body);
+  font-size: 11px;
+  color: var(--bk-content-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
